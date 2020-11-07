@@ -1,0 +1,82 @@
+.header
+  height: 100vh 
+  background: url(../img/one-season/header/bg.png) no-repeat 
+  background-size: cover 
+  background-position: center 0
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    height: 150px 
+    width: 100%
+    background: linear-gradient(#111213 0%, #111213 43.62%, rgba(32,31,33,0) 86.33%)
+  & .nav 
+    padding-top: 50px
+    display: grid  
+    grid-template-columns: min-content 1fr 
+    justify-items: center 
+    align-items: center
+    & .logo 
+      position: relative
+      & a 
+        display: inline-block
+        width: 154px 
+        height: 56px 
+        & img 
+          width: 100%
+          object-fit: cover 
+    & .menu 
+      & .burger 
+        display: none 
+      & .main-menu 
+        & a 
+          color: #ffffff
+          font-size: 36px 
+          display: inline-block 
+          margin-left: 25px 
+          transition: .3s linear 
+          position: relative
+          &::before
+            content: ''
+            position: absolute
+            bottom: 5px
+            left: 0
+            height: 1px 
+            width: 0
+            background: #85CCDC
+            transition: .3s linear 
+          &:first-of-type 
+            margin-left: 0
+          &:hover 
+            color: #85CCDC
+          &:hover::before 
+            width: 100%
+  & .header-title
+    display: grid 
+    grid-template-columns: min-content 1fr 
+    grid-gap: 45px 
+    background: #0E0E0E
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    padding: 45px 
+    width: 1385px
+    max-height: 325px 
+    & .block 
+      & span 
+        display: inline-block
+        font-size: 96px 
+        +bold 
+        line-height: 80px 
+        &:nth-child(2)
+          font-size: 35px
+          line-height: 0 
+      & p
+        margin-bottom: 20px 
+        &:last-of-type
+          margin-bottom: 0 
+    & .block-number 
+      text-align: center

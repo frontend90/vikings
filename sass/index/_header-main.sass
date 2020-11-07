@@ -1,0 +1,61 @@
+.header-main
+  height: 100vh 
+  background: url(../img/index/header/bg.jpg) no-repeat 
+  background-size: cover 
+  background-position: center 50px
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    height: 150px 
+    width: 100%
+    background: linear-gradient(#111213 0%, #111213 43.62%, rgba(32,31,33,0) 86.33%)
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    height: 70px 
+    width: 100%
+    background: linear-gradient(#0e0e0e 0%,rgba(17,17,17,0.850295) 16.53%, rgba(32,31,33,0) 100%)
+    transform: rotate(180deg)
+  & .nav 
+    padding-top: 50px
+    display: grid  
+    justify-items: center 
+    & .menu 
+      & .burger 
+        display: none 
+      & .main-menu 
+        & a 
+          color: #ffffff
+          font-size: 36px 
+          display: inline-block 
+          margin-left: 25px 
+          transition: .3s linear 
+          position: relative
+          &::before
+            content: ''
+            position: absolute
+            bottom: 5px
+            left: 0
+            height: 1px 
+            width: 0
+            background: #85CCDC
+            transition: .3s linear 
+          &:first-of-type 
+            margin-left: 0
+          &:hover 
+            color: #85CCDC
+          &:hover::before 
+            width: 100%
+  & .header-title
+    display: grid 
+    justify-content: center
+    align-items: center
+    height: calc(100% - 105px)
+    & img 
+      width: 100%
+      object-fit: cover 

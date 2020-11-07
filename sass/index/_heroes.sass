@@ -1,0 +1,44 @@
+.heroes
+  background: #0E0E0E
+  padding: 100px 0 
+  & .title
+    text-align: center 
+    & h3 
+      font-size: 36px 
+  & .heroes-slider
+    margin-top: 100px 
+    position: relative
+    display: grid
+    grid-template-columns: 2fr 1fr 
+    justify-content: center
+    grid-gap: 75px 
+    & .block 
+      & .slick-list 
+        overflow: hidden
+        & .slick-track 
+          display: flex 
+      & img 
+        width: 100%
+        object-fit: cover 
+      & .heroes-content
+        & h5
+          +light_ital 
+          font-size: 72px 
+          color: #85CCDC
+          margin-bottom: 45px  
+        & p 
+          margin-top: 40px 
+    & .heroes-slider-img
+      max-width: 775px 
+    & .heroes-slider-content 
+      max-width: 350px 
+    & .btn-slider
+      width: 750px 
+      display: grid 
+      grid-template-columns: min-content min-content
+      justify-content: space-between
+      align-items: center
+      padding: 0 35px 
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
