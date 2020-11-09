@@ -11,14 +11,17 @@
     grid-template-columns: repeat(3, 1fr)
     grid-column-gap: 70px 
     grid-row-gap: 100px 
+    counter-reset: number 
     & .block 
       width: 100%
       height: 100%
       position: relative
+      &:nth-child(n+10)::after 
+        content: counter(number)
       &:hover::before 
         opacity: 1
         visibility: visible
-      &:hover .overlay 
+      &:hover a 
         opacity: 1
         visibility: visible
       &::before
@@ -33,32 +36,32 @@
         visibility: hidden
         transition: .3s linear 
         z-index: 2
+      &::after
+        content: '0' counter(number)
+        counter-increment: number
+        position: absolute
+        +bold  
+        font-size: 96px
+        color: #600E09
+        left: 0
+        top: -90px 
+        z-index: 0
       & img 
         width: 100%
         object-fit: cover 
         z-index: 1
         position: relative
-      & .overlay 
+      & a 
+        display: block 
+        padding: 10px 75px 
+        background: #0e0e0e
+        color: #ffffff
+        font-size: 36px 
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%,-50%)
         opacity: 0
         visibility: hidden
-        transition: .3s linear
+        transition: .3s linear 
         z-index: 2
-        & a 
-          display: block 
-          padding: 10px 75px 
-          background: #0e0e0e
-          color: #ffffff
-          font-size: 36px 
-      & span 
-        display: block 
-        position: absolute
-        color: #600E09
-        +bold 
-        font-size: 96px 
-        left: 0
-        bottom: 78%
-        z-index: 0

@@ -1,3 +1,18 @@
+/***********   active menu по click   **************/
+$(function () {
+  $('.main-menu a').each(function () {
+    var location = window.location.href;
+    var link = this.href;
+    if (location == link) {
+      $(this).addClass('active');
+      console.log(1);
+    }
+    else {
+      $(this).removeClass('active');
+    }
+  });
+});
+
 /*************  burger   *************/
 let user_icon = document.querySelector('.burger');
 user_icon.addEventListener("click", function (e) {
@@ -42,3 +57,5 @@ $('.heroes-slider-content').slick({
   arrows: false,
   fade: true
 });
+
+

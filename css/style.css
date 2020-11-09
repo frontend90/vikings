@@ -233,6 +233,7 @@ body {
       grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 75px;
   grid-row-gap: 100px;
+  counter-reset: number;
 }
 
 .all-seasons .all-seasons-wrap .block {
@@ -241,12 +242,16 @@ body {
   position: relative;
 }
 
+.all-seasons .all-seasons-wrap .block:nth-child(n+10)::after {
+  content: counter(number);
+}
+
 .all-seasons .all-seasons-wrap .block:hover::before {
   opacity: 1;
   visibility: visible;
 }
 
-.all-seasons .all-seasons-wrap .block:hover .overlay {
+.all-seasons .all-seasons-wrap .block:hover a {
   opacity: 1;
   visibility: visible;
 }
@@ -266,6 +271,18 @@ body {
   z-index: 2;
 }
 
+.all-seasons .all-seasons-wrap .block::after {
+  content: "0" counter(number);
+  counter-increment: number;
+  position: absolute;
+  font-family: 'RobotoCondensed-Bold';
+  font-size: 96px;
+  color: #600E09;
+  left: 0;
+  top: -90px;
+  z-index: 0;
+}
+
 .all-seasons .all-seasons-wrap .block img {
   width: 100%;
   -o-object-fit: cover;
@@ -274,7 +291,12 @@ body {
   position: relative;
 }
 
-.all-seasons .all-seasons-wrap .block .overlay {
+.all-seasons .all-seasons-wrap .block a {
+  display: block;
+  padding: 10px 75px;
+  background: #0e0e0e;
+  color: #ffffff;
+  font-size: 36px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -285,25 +307,6 @@ body {
   -webkit-transition: .3s linear;
   transition: .3s linear;
   z-index: 2;
-}
-
-.all-seasons .all-seasons-wrap .block .overlay a {
-  display: block;
-  padding: 10px 75px;
-  background: #0e0e0e;
-  color: #ffffff;
-  font-size: 36px;
-}
-
-.all-seasons .all-seasons-wrap .block span {
-  display: block;
-  position: absolute;
-  color: #600E09;
-  font-family: 'RobotoCondensed-Bold';
-  font-size: 96px;
-  left: 0;
-  bottom: 78%;
-  z-index: 0;
 }
 
 .heroes {
@@ -482,6 +485,14 @@ body {
   width: 100%;
 }
 
+.header .nav .menu .main-menu a.active {
+  color: #85CCDC;
+}
+
+.header .nav .menu .main-menu a.active::before {
+  width: 100%;
+}
+
 .header .header-title {
   display: -ms-grid;
   display: grid;
@@ -545,6 +556,7 @@ body {
       grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 70px;
   grid-row-gap: 100px;
+  counter-reset: number;
 }
 
 .all-series .all-series-wrap .block {
@@ -553,12 +565,16 @@ body {
   position: relative;
 }
 
+.all-series .all-series-wrap .block:nth-child(n+10)::after {
+  content: counter(number);
+}
+
 .all-series .all-series-wrap .block:hover::before {
   opacity: 1;
   visibility: visible;
 }
 
-.all-series .all-series-wrap .block:hover .overlay {
+.all-series .all-series-wrap .block:hover a {
   opacity: 1;
   visibility: visible;
 }
@@ -578,6 +594,18 @@ body {
   z-index: 2;
 }
 
+.all-series .all-series-wrap .block::after {
+  content: "0" counter(number);
+  counter-increment: number;
+  position: absolute;
+  font-family: 'RobotoCondensed-Bold';
+  font-size: 96px;
+  color: #600E09;
+  left: 0;
+  top: -90px;
+  z-index: 0;
+}
+
 .all-series .all-series-wrap .block img {
   width: 100%;
   -o-object-fit: cover;
@@ -586,7 +614,12 @@ body {
   position: relative;
 }
 
-.all-series .all-series-wrap .block .overlay {
+.all-series .all-series-wrap .block a {
+  display: block;
+  padding: 10px 75px;
+  background: #0e0e0e;
+  color: #ffffff;
+  font-size: 36px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -597,25 +630,6 @@ body {
   -webkit-transition: .3s linear;
   transition: .3s linear;
   z-index: 2;
-}
-
-.all-series .all-series-wrap .block .overlay a {
-  display: block;
-  padding: 10px 75px;
-  background: #0e0e0e;
-  color: #ffffff;
-  font-size: 36px;
-}
-
-.all-series .all-series-wrap .block span {
-  display: block;
-  position: absolute;
-  color: #600E09;
-  font-family: 'RobotoCondensed-Bold';
-  font-size: 96px;
-  left: 0;
-  bottom: 78%;
-  z-index: 0;
 }
 
 @media screen and (max-width: 1415px) {
@@ -750,9 +764,6 @@ body {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
-  .all-seasons .all-seasons-wrap .block span, .all-seasons .all-series-wrap .block span, .all-series .all-seasons-wrap .block span, .all-series .all-series-wrap .block span {
-    bottom: 83%;
-  }
 }
 
 @media screen and (max-width: 900px) {
@@ -864,9 +875,6 @@ body {
   .all-seasons .all-seasons-wrap, .all-seasons .all-series-wrap, .all-series .all-seasons-wrap, .all-series .all-series-wrap {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-  }
-  .all-seasons .all-seasons-wrap .block span, .all-seasons .all-series-wrap .block span, .all-series .all-seasons-wrap .block span, .all-series .all-series-wrap .block span {
-    bottom: 89%;
   }
 }
 
